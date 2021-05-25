@@ -5,24 +5,16 @@ import sys
 def solve(t: int, N: int):
 
     before = 0
-    before_target = -1
-
     rule = []
-    for i in range(0, 150):
-        intax = int((100+t)/100 * i)
+    for i in range(1, 100+t):
+        intax = ((100+t) * i)//100
         if intax - before > 1:
-            print(intax-1, intax, before, (intax)-before_target)
-            rule.append((intax)-before_target)
-            before_target = intax-1
+            rule.append(intax-1)
 
         before = intax
 
-    print(rule)
-    ret_val = (100+t)*(N // len(rule))
-    for v in rule[:N % len(rule)]:
-        ret_val += v
-
-    print(ret_val-1)
+    q, r = divmod(N-1, t)
+    print((100+t)*q + rule[r])
     return
 
 
