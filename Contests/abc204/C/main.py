@@ -2,26 +2,7 @@
 import sys
 
 
-'''
-0 ~ 999 : 0
-1,000 ~ 999,999: 1
-1,000,000 ~ 999,999,999 : 2
-1,000,000,000 ~ 999,999,999,999 : 3
-1,000,000,000,000 ~ 999,999,999,999,999 : 4
-'''
-
-
-def solve(N: int):
-
-    l = len(str(N))
-    comma = (l-1)//3
-    count = 0
-    for i in range(1, comma+1):
-        if comma == i:
-            count += (N - 10**(3*i) + 1) * i
-        else:
-            count += (10**(3*(i+1)) - 10**(3*i)) * i
-    print(count)
+def solve(N: int, M: int, A: "List[int]", B: "List[int]"):
     return
 
 
@@ -33,8 +14,13 @@ def main():
                 yield word
     tokens = iterate_tokens()
     N = int(next(tokens))  # type: int
-    solve(N)
-
+    M = int(next(tokens))  # type: int
+    A = [int()] * (M)  # type: "List[int]"
+    B = [int()] * (M)  # type: "List[int]"
+    for i in range(M):
+        A[i] = int(next(tokens))
+        B[i] = int(next(tokens))
+    solve(N, M, A, B)
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,9 @@
+h_{0,0} \ldots h_{0,28}
+\vdots
+h_{29,0} \ldots h_{29,28}
+v_{0,0} \ldots v_{0,29}
+\vdots
+v_{28,0} \ldots v_{28,29}
+si_1 sj_1 ti_1 tj_1 a_1 e_1
+\vdots
+si_{1000} sj_{1000} ti_{1000} tj_{1000} a_{1000} e_{1000}

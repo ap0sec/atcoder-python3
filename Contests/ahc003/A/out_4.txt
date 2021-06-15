@@ -1,0 +1,31 @@
+string query(s, t, prev_result) {
+    // WRITE YOUR SOLUTION HERE
+}
+
+int main() {
+    if (LOCAL_TEST) {
+        read_h_v();
+    }
+    prev_result = 0;
+    score = 0.0;
+    for (int k = 0; k < 1000; k++) {
+        if (LOCAL_TEST) {
+            read_s_t_a_e();
+        } else {
+            read_s_t();
+        }
+        path = query(s, t, prev_result);
+        print(path);
+        if (LOCAL_TEST) {
+            b = compute_path_length(path);
+            score = score * 0.998 + a / b;
+            prev_result = round(b * e);
+        } else {
+            prev_result = read_result();
+        }
+    }
+    if (LOCAL_TEST) {
+        print(round(2312311 * score));
+    }
+    return 0;
+}
